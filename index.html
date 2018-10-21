@@ -242,6 +242,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林俊浩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="驿站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/20/数据库/" itemprop="url">数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-20T22:28:22+08:00">
+                2018-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/20/数据库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/20/数据库/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><strong>1NF</strong>字段不可再分；<strong>2NF</strong>满足1NF情况下非主属性完全依赖于主属性,消除部分依赖，也就是说如果有两个主属性，那么非主属性不能只依赖于其中一个主属性；<strong>3NF</strong>满足2NF情况下消除传递依赖,也就是说在一张表中通过主属性A能得到B或者C，但是C也能从B得到，这时候要拆分表消除传递依赖。不管如何，现实情况下如果满足严格的范式，虽然能减少数据冗余，但是实体之间的关系会变得非常复杂</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>事务有点像若干个有序的小任务组成的大任务。有ACID四大特性。要么全完成，要么全不完成（<strong>原子性</strong>）；事务完成后，数据库的数据符合预期保持正确完整（<strong>一致性</strong>）；并发的事务交叉读写数据导致数据不一致，所以要采取隔离手段防止这种现象（<strong>隔离性</strong>）；事务完成后，所有的变化都会持久化到数据库，也就是写到硬盘上（<strong>持久性</strong>）。</p>
+<h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><p>在实际开发中，由于数据库服务器是处于高并发环境下的，所以要选择合适的隔离级别保护数据的一致性，同时提高服务器的性能。<br><img src="/images/隔离级别.jpg" style="width:400px !important; height:250px !important"><br><strong>赃读</strong>指在一个事务中读取到其他事务未提交的数据；<strong>不可重复度</strong>指在一个事务中多次查询的数据不同（被其他事务update）;<strong>幻读</strong>指在一个事务中多次查询的结果集多了或者少了（被其他事务delete,insert）。在MySQL的InnoDB引擎在RR级别使用了MVCC（多版本并发控制）避免幻读，将行锁与行的多个版本结合起来，用更小的开销提高并发性能。<strong>序列化</strong>用的是独占锁，性能极差。</p>
+<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><p>存储过程是完成特定功能的SQL语句集，能在存储过程中调用其他存储过程，但不能drop其他存储过程。其入参不能于数据表字段名相同，例如在删除记录时，指定的入参实际会变成每条记录的字段值，导致把表的数据全部删除。</p>
+<h3 id="与函数的区别"><a href="#与函数的区别" class="headerlink" title="与函数的区别"></a>与函数的区别</h3><p>存储过程一般作为独立的部分执行，而函数可以嵌入select语句调用</p>
+<h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>触发器是特殊的存储过程，只是在insert,update,delete发生时才执行，是隐式调用的。相同的表，相同的事件只能创建一个触发器，当触发器不用时要及时删除</p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>视图依据基本表存在，是预编译的SQL语句，不占物理空间，可理解为虚拟表。与临时表不同，临时表会占用物理空间，暂时还没用在实际项目中。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是以数据结构组织的，存储了记录的指针。不同的索引，数据结构有所不同，数据的读写效率也不一样。<strong>聚集索引</strong>表中数据的逻辑顺序与键值顺序相同，有主键索引，其数据结构是B树，一种平衡树，有利于查找。<strong>非聚集索引</strong>有唯一索引和普通索引，普通索引有单列索引和多列索引，多列索引要注意<strong>最左前缀</strong>的问题。索引长度越长区分度越高内存消耗越大效率越高。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>char类型的值存储时会填充空格到指定长度，检索时删除空格，速度快但是浪费空间，适合在InnoDB和MyISAM用  </li>
+<li>datatime的范围是1000-9999；timestamp的范围是1970-2038而且会把时区转化为UTC（世界标准时间）进行存储，查询时又转化成当前时区返回，因此timestamp适用于跨时区的需求  </li>
+<li>blob类型用于存储二进制形式的文本  </li>
+</ul>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ul>
+<li>允许null值的列不能作为唯一标识</li>
+<li>使用默认值而不是null更好，因为有默认值不会因为null而出现NPE</li>
+<li>外连接可以查询到关联或未关联的行的值，未关联的行中列显示为null</li>
+<li>外键和级联是强阻塞的，不适合分布式、高并发的环境</li>
+<li>外键不用用在不同引擎的表，不能跨引擎  </li>
+</ul>
+<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><ul>
+<li>distinct用于select语句中去重，位于select语句第一个字段前，当有多个字段时，只有这几个字段都相同才会合并；也可用于聚集函数如count(distinct column)</li>
+<li>count(column)不会统计为值null的行，而count(*)会</li>
+<li>desc 表名 和show columns from 表名 的效果一样都是查看表结构</li>
+<li>insert语句中指出字段名比不指出更安全，不指出的话值与字段名的顺序不容易对应</li>
+<li>truncate 表名 与不带where子句的delete效果一样，truncate不可以rollback，所以速度快，delete可以rollback; drop 表名是连表都删除了，不可rollback  </li>
+</ul>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>数据库有许多方面都可以优化，需要结合实际与经验不断优化数据库服务器的性能</p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><ul>
+<li>同表操作中，自连接比子查询效率高</li>
+<li>在select的where子句中，判断某个字段时如果用到下面关键字或符号会使该列的索引失效（is null, &lt;&gt;2, in(1, 2), or)  </li>
+</ul>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><h3 id="分表"><a href="#分表" class="headerlink" title="分表"></a>分表</h3><h3 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h3><h3 id="分离活跃数据"><a href="#分离活跃数据" class="headerlink" title="分离活跃数据"></a>分离活跃数据</h3><p>把活跃数据存在默认表优先查询，不活跃数据定期转移到备用表</p>
+<h3 id="批量读取和延迟修改"><a href="#批量读取和延迟修改" class="headerlink" title="批量读取和延迟修改"></a>批量读取和延迟修改</h3><h3 id="主从复制和读写分离"><a href="#主从复制和读写分离" class="headerlink" title="主从复制和读写分离"></a>主从复制和读写分离</h3><p>对数据库集群，主数据库服务器处理写的操作，多台从服务器处理读操作。从服务器复制主服务器的数据实现同步</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/Java基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,7 +1031,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
