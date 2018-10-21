@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="驿站">
 <meta property="og:description" content="面向对象把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态  特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstra">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-17T18:53:15.157Z">
+<meta property="og:updated_time" content="2018-10-21T17:21:10.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础">
 <meta name="twitter:description" content="面向对象把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态  特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstra">
@@ -361,9 +361,11 @@
 <li>里氏替换原则：任何时候子类都可以替换掉父类</li>
 <li>接口隔离原则：接口单一职责，细粒化</li>
 <li>组合原则：优先使用组合复用代码</li>
-<li>迪米特法则：一个对象对其他对象尽可能少的了解<h2 id="关键字和基本概念"><a href="#关键字和基本概念" class="headerlink" title="关键字和基本概念"></a>关键字和基本概念</h2></li>
+<li>迪米特法则：一个对象对其他对象尽可能少的了解</li>
 </ul>
 </li>
+</ul>
+<h2 id="关键字和基本概念"><a href="#关键字和基本概念" class="headerlink" title="关键字和基本概念"></a>关键字和基本概念</h2><ul>
 <li><strong>语法</strong><ul>
 <li>continue跳出本次循环继续下次循环</li>
 <li>break跳出当前循环，可跳出多重循环,跳出switch否则执行后面的case语句</li>
@@ -372,7 +374,7 @@
 </li>
 <li><strong>内部类</strong>：内部类相当于外部类的一个成员变量，可以直接访问外部变量；但是外部类不能直接访问内部类变量，必须通过创建内部类实例建立联系后再访问（内外之间的访问是不关乎权限的）  <ul>
 <li><strong>静态内部类</strong>：只能访问外部类的静态成员和静态方法，不依赖外部类实例而实例化</li>
-<li><strong>普通内部类</strong>：能访问外部类的成员和方法，无论是否静态，但是本身不能有静态成员和静态方法，<br>  依赖外部类实例而实例化</li>
+<li><strong>普通内部类</strong>：能访问外部类的成员和方法，无论是否静态，但是本身不能有静态成员和静态方法，依赖外部类实例而实例化</li>
 </ul>
 </li>
 <li><strong>构造函数</strong><ul>
@@ -401,35 +403,43 @@
 <li><strong>类加载顺序</strong><ul>
 <li>static变量和static块的初始化顺序与代码顺序有关，哪个在前哪个先初始化</li>
 <li>反编译发现构造代码块是在调用构造函数时插入到构造函数里的，位于super后(如果有)，所以是成员变量 &gt; 构造代码块 &gt; 构造函数</li>
-<li>总的顺序是：父类static &gt; 子类static &gt; 父类成员 &gt; 父类构造块 &gt; 父类构造函数 &gt; 子类成员 &gt; 子类构造块 &gt; 子类构造函数<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>总的顺序是：父类static &gt; 子类static &gt; 父类成员 &gt; 父类构造块 &gt; 父类构造函数 &gt; 子类成员 &gt; 子类构造块 &gt; 子类构造函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li>Java小数默认为double</li>
 <li>整型根据前缀表示不同进制，16进制(0x或0X)，8进制(0),Java7开始可以写2进制(0b或0B)</li>
 <li>低精度到高精度：byte&lt;short&lt;char&lt;int&lt;long&lt;float&lt;double,向下转型要强制转换，精度会损失，”+=”赋值隐含强制转换</li>
-<li>char不管英文还是中文，固定占用占用2个字节，用来储存Unicode字符，所以也包括了中文；<br>C/C++中由于采用的字符编码集是ASCII，只有一个字节，因此没办法表示一个中文字符</li>
+<li>char不管英文还是中文，固定占用占用2个字节，用来储存Unicode字符，所以也包括了中文；C/C++中由于采用的字符编码集是ASCII，只有一个字节，因此没办法表示一个中文字符</li>
 <li>不同数据类型运算时会自动向上(高精度)转型，final修饰除外</li>
 <li>boolean不可以和其他基本数据类型相互转换</li>
-<li>如果两个操作数其中有一个是double类型，另一个操作就会转换为double类型。否则，<br>如果其中一个操作数是float类型，另一个将会转换为float类型。否则，<br>如果其中一个操作数是long类型，另一个会转换为long类型。否则，<br>两个操作数都转换为int类型(byte，short，char进行计算时都会提升为int类型)<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2></li>
+<li>如果两个操作数其中有一个是double类型，另一个操作就会转换为double类型。否则，如果其中一个操作数是float类型，另一个将会转换为float类型。否则，如果其中一个操作数是long类型，另一个会转换为long类型。否则，两个操作数都转换为int类型(byte，short，char进行计算时都会提升为int类型)</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
 <li>&amp;有两种用法：按位与和逻辑与。无论左边运算true或false，右边也会运算，|同理</li>
 <li>&amp;&amp;是短路与，左边运算结果位true,右边才会运算，||同理</li>
-<li><strong>移位运算符</strong> ：按二进制形式把所有的数字移动位数，计算机使用补码表示和存储</li>
-</ul>
-</li>
+<li><strong>移位运算符</strong> ：按二进制形式把所有的数字移动位数，计算机使用补码表示和存储<ul>
 <li><strong>&lt;&lt;</strong> : 左移，高位舍弃，低位空位补0</li>
 <li><strong>&gt;&gt;</strong> : 右移，低位舍弃，高位空位补符号位（正数补0，负数补1）</li>
-<li><strong>&gt;&gt;&gt;</strong> : 无符号右移，忽略符号位，空位补0<h2 id="常见包、类、接口"><a href="#常见包、类、接口" class="headerlink" title="常见包、类、接口"></a>常见包、类、接口</h2><ul>
+<li><strong>&gt;&gt;&gt;</strong> : 无符号右移，忽略符号位，空位补0</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见包、类、接口"><a href="#常见包、类、接口" class="headerlink" title="常见包、类、接口"></a>常见包、类、接口</h2><ul>
 <li><strong>包</strong>：java.lang, java.io, java.util, java.net, java.sql</li>
 <li><strong>类</strong>：String, Thread, ArrayList, InputStream/OutputStream, Math</li>
-<li><strong>接口</strong>：List, Map, Iterator, Runnable, Serializable<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2></li>
+<li><strong>接口</strong>：List, Map, Iterator, Runnable, Serializable</li>
 </ul>
-</li>
-</ul>
-</li>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><ul>
 <li><strong>层次</strong>：Error和Exception继承Throwable，RuntimeException继承Exception</li>
 <li><strong>类型</strong>：RuntimeException及其子类是非受检异常；除此之外Exception是受检异常</li>
 <li><strong>处理</strong>：Error捕获不到，RuntimeException不要求捕获，Exception要求抛出或捕获</li>
 <li><strong>常见的RuntimeException</strong>：NullPointerException, ClassCastException, IllegalArgumentExeption, IndexOutOfBoundsException</li>
 <li><strong>异常语句</strong>：finally中的return语句会覆盖前面的return语句； 如果一个方法出现异常那么只运行catch和finally中的代码，其他代码忽略</li>
-<li><strong>throw和throws</strong>：throw用于抛出异常，throws用于在方法中声明会出现的异常<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2></li>
+<li><strong>throw和throws</strong>：throw用于抛出异常，throws用于在方法中声明会出现的异常</li>
+</ul>
+<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><ul>
 <li><strong>List</strong><ul>
 <li><strong>ArrayList</strong><ul>
 <li>默认容量为10，默认增长0.5倍+1</li>
@@ -453,7 +463,7 @@
 </li>
 <li><strong>Map</strong><ul>
 <li><strong>HashMap</strong><ul>
-<li>JDK7：数组 + 链表实现，数组元素比作一个bucket, 每个bucket由一个Entry&lt;K,V&gt;链表组成，<br>如果K的hashcode冲突会放在相同的bucket， hash冲突严重时，链表会越来越长，时间复杂度为O(n),<br>当超过设置的装填因子会重rehash，容量扩容1倍</li>
+<li>JDK7：数组 + 链表实现，数组元素比作一个bucket, 每个bucket由一个Entry&lt;K,V&gt;链表组成，如果K的hashcode冲突会放在相同的bucket， hash冲突严重时，链表会越来越长，时间复杂度为O(n),当超过设置的装填因子会重rehash，容量扩容1倍</li>
 <li>JDK8：超过装填因子时，链表转换成红黑树的结构</li>
 <li>不允许键重复，对应的类要重写hashcode和equals</li>
 <li>装填因子 = 元素个数 / 容量，默认容量16，装填因子大于0.75就扩容1倍</li>
@@ -513,11 +523,16 @@
 </li>
 <li><strong>集合数组转换</strong><ul>
 <li>集合转数组 toArray(T[] a)</li>
-<li>数组转集合 Arrays.asList() 实质上仍是数组，只是通过适配实现转换，不能用操作集合的方法对转换后的集合操作<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2>运行状态下能获取类的信息，能调用任意对象的方法和属性，但破坏了封装程序；更加灵活，但性能低</li>
+<li>数组转集合 Arrays.asList() 实质上仍是数组，只是通过适配实现转换，不能用操作集合的方法对转换后的集合操作</li>
 </ul>
 </li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>运行状态下能获取类的信息，能调用任意对象的方法和属性，但破坏了封装程序；更加灵活，但性能低</p>
+<ul>
 <li><strong>得到Class对象的方式</strong>：object.getClass(), object.class, Class.forName(String classname)</li>
-<li><strong>Class.forName()和ClassLoader.loadClass()</strong><br>Class.forName()内部实际调用的方法是Class.forName(className,true,classloader),true表示加载class文件到JVM并初始化类；ClassLoader.loadClass(className)方法内部实际调用的方法是ClassLoader.loadClass(className,false)，false表示不链接,意味着不会进行类初始化  <h2 id="方法解惑"><a href="#方法解惑" class="headerlink" title="方法解惑"></a>方法解惑</h2></li>
+<li><strong>Class.forName()和ClassLoader.loadClass()</strong><br>Class.forName()内部实际调用的方法是Class.forName(className,true,classloader),true表示加载class文件到JVM并初始化类；ClassLoader.loadClass(className)方法内部实际调用的方法是ClassLoader.loadClass(className,false)，false表示不链接,意味着不会进行类初始化  </li>
+</ul>
+<h2 id="方法解惑"><a href="#方法解惑" class="headerlink" title="方法解惑"></a>方法解惑</h2><ul>
 <li><strong>数组拷贝效率</strong>： System.arraycopy &gt; clone &gt; Arrays.copyOf &gt; for循环拷贝</li>
 <li><strong>hashCode()</strong> ：默认返回对象的内存地址</li>
 <li><strong>equals()</strong> ：在Object中是比较对象内存地址的，相当于”=”,在String中被重写了，比较的是字符串值</li>
@@ -525,84 +540,76 @@
 <li><strong>Math.round()/floor()/ceil()</strong> ：注意float型是转成int型，double型转成long型<ul>
 <li><strong>round</strong> : 加上0.5向下取整</li>
 <li><strong>floor</strong> ：向下取整，取数轴上比参数小的整数</li>
-<li><strong>ceil</strong> : 向上取整，取数轴上比参数大的整数 <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2>线程是运行在一个单一进程上下文中的逻辑流，通俗点讲就是：线程是进程内部的执行序列</li>
-</ul>
-</li>
-<li><strong>并发和并行</strong><br>并发是一个时刻多个任务的运行，宏观并行，微观串行；并行是同个时间上多个任务的运行，通常需要多核CPU才能实现</li>
-<li><strong>线程安全</strong><br>通过分析并发下是否满足三大性质能实现线程安全<ul>
-<li><strong>Java内存模型(JMM)</strong><br>分为主内存和工作内存。主内存存储共享的变量；每个线程都有自己的工作内存，存储线程本地变量和需要共享变量<br>变量的拷贝副本，每次修改拷贝时都会更新主内存的值</li>
-<li><strong>volatile</strong><ul>
-<li>volatile关键字保证变量被修改后，变量的值对其他线程是立即可见的（新的变量值立马写会主内存，保证可见性）  </li>
-<li>对于变量非原子性的操作（例如：变量自增）是不能保证原子性的</li>
-<li>volatile能只能限制变量前后之间代码的重排序，但不能保证volatile之前和之后代码的重排序，能保证一定的有序性</li>
-</ul>
-</li>
-<li><strong>三大性质</strong><ul>
-<li><strong>原子性</strong><ul>
-<li><strong>竞态条件</strong>：多个线程同时竞争/更新共享的资源是会产生竞态条件，通过同步保证原子性</li>
-<li><strong>临界区</strong>：导致竞态条件的代码区</li>
-<li><strong>复合操作</strong>: 一组以原子性的操作确保线程安全，如自增就是非原子性操作，但是用atomic变量自增就可满足原子性操作</li>
-</ul>
-</li>
-<li><strong>可见性</strong><br>执行读操作的线程能立马看到其他线程写入的值</li>
-<li><strong>有序性</strong><br>Java内存模型运行编译器和处理器对指令重排序，对单线程无影响，但会影响多线程并发执行的正确性<ul>
-<li><strong>happens-before原则</strong>：保证有序性的规则，但是多线程并发会破坏部分规则，要采取一些措施符合这些规则来保证有序性<ul>
-<li><strong>程序顺序规则</strong>：一个线程前面的代码先行发生于后面的代码</li>
-<li><strong>锁规则</strong>：一个锁释放先行发生于随后的加锁</li>
-<li><strong>volatile规则</strong>：一个volatile域的写先行发生于后续这个volatitle的读</li>
-<li><strong>传递规则</strong>：操作A先行发生于操作B,操作B先行发生于C，则操作A先行发生与操作C</li>
+<li><strong>ceil</strong> : 向上取整，取数轴上比参数大的整数 </li>
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>线程是运行在一个单一进程上下文中的逻辑流，通俗点讲就是：线程是进程内部的执行序列</p>
+<ul>
+<li><strong>并发和并行</strong></li>
 </ul>
-</li>
-<li><strong>各种锁</strong><br>  通过锁的同步机制实现线程安全，加了锁的操作能满足原子性<ul>
-<li><strong>内置锁synchronized</strong><ul>
-<li>调用synchronized块和方法的对象作为内置锁</li>
-<li>静态的synchronized方法以Class对象作为锁</li>
-<li>获得锁和释放锁是隐式的，可重入，互斥锁</li>
+<p>并发是一个时刻多个任务的运行，宏观并行，微观串行；并行是同个时间上多个任务的运行，通常需要多核CPU才能实现</p>
+<ul>
+<li><strong>线程安全</strong></li>
 </ul>
-</li>
-<li><strong>可重入锁ReentrantLock</strong><ul>
-<li>比内置锁更加灵活，可以设置和获取锁的信息，可设置获取锁的等待时间来避免死锁</li>
-<li>可以设置是否为公平锁和非公平锁，默认非公平锁；可重入，互斥锁</li>
-</ul>
-</li>
-<li><strong>读写锁ReadWriteLock</strong><ul>
-<li>ReentrantReadWriteLock是具体实现类，同时具有ReentantLock的功能</li>
-<li>维护一对关联的锁，读锁是共享锁（S锁），写锁是独占锁/互斥锁（X锁</li>
-</ul>
-</li>
-<li><strong>公平锁和非公平锁</strong><ul>
-<li>公平锁是当线程取不到锁时会按先后顺序进入AQS中阻塞，当锁释放锁时，按队列的顺序取锁</li>
-<li>非公平锁是有一个后来的线程刚好赶上释放锁的时机取得了锁，这对AQS里的线程是不公平的</li>
-</ul>
-</li>
-<li><strong>自旋锁</strong><ul>
-<li>当前线程不停地执行循环体，不进行线程状态的改变，所以响应速度很快</li>
-<li>但当线程数不停增加时，性能下降明显，因为每个线程都需要执行，占用CPU时间。如果线程竞争不激烈，并且保持锁的时间段。适合使用自旋锁</li>
-</ul>
-</li>
-<li><strong>乐观锁和悲观锁</strong><ul>
-<li><strong>乐观锁</strong>总是认为资源是不存在竞争，所以没有加锁，不会有阻塞和死锁，通过CAS算法实现<ul>
-<li>CAS有3个操作数，内存值V，旧的预期值A, 要修改的新值B，预期值存于线程本地内存，是从主内存拷贝的，<br>内存值在并发状态下可能被修改，内存值用了volatile保证是内存中最新的值，所以一个线程要修改共享变量<br>时总是会先检查A值是否与V值，如果不相线程就循环重新获取预期值再与内存值比较，直到操作成功，这种自<br>旋的方式速度快，但占用CPU。通过加版本号标志解决ABA问题</li>
-<li>atomic包中的类大量采用了CAS算法实现变量和对象的原子性的操作</li>
-</ul>
-</li>
-<li><strong>悲观锁</strong> 总是认为资源存在竞争，synchronized和ReetrankLock就是悲观锁</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>ThreadLocal</strong><ul>
-<li>ThreadLocal为线程提供独立的局部变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本</li>
-<li>ThreadLocal在类中通常定义为静态变量, 当线程为ThreadLocal实例set一个value时，发生了如下调用:当前线程<br>会把ThreadLocal实例和value存到它的ThreadLocal.ThreadLocalMap对象中，该对象由ThreadLocal实例创建并赋给<br>当前线程，实际上ThreadLocalMap是Entry&lt;ThreadLocal&lt;?&gt;, Object&gt;数组组成的结构  </li>
-<li>Entry.key是ThreadLocal变量的弱引用，当ThreadLocal变量=null时，ThreadLocal对象就被回收了，<br>避免了内存泄露，对应的value在下一次ThreadLocalMap调用set,get,remove的时候会被清除</li>
-</ul>
-</li>
-</ul>
-</li>
+<p>通过分析并发下是否满足三大性质能实现线程安全</p>
+<pre><code>- **Java内存模型(JMM)**
+
+分为主内存和工作内存。主内存存储共享的变量；每个线程都有自己的工作内存，存储线程本地变量和需要共享变量  
+变量的拷贝副本，每次修改拷贝时都会更新主内存的值
+
+- **volatile**
+    - volatile关键字保证变量被修改后，变量的值对其他线程是立即可见的（新的变量值立马写会主内存，保证可见性）  
+    - 对于变量非原子性的操作（例如：变量自增）是不能保证原子性的
+    - volatile能只能限制变量前后之间代码的重排序，但不能保证volatile之前和之后代码的重排序，能保证一定的有序性
+- **三大性质**
+    - **原子性**
+        - **竞态条件**：多个线程同时竞争/更新共享的资源是会产生竞态条件，通过同步保证原子性
+        - **临界区**：导致竞态条件的代码区
+        - **复合操作**: 一组以原子性的操作确保线程安全，如自增就是非原子性操作，但是用atomic变量自增就可满足原子性操作
+    - **可见性**
+    执行读操作的线程能立马看到其他线程写入的值
+    - **有序性**
+    Java内存模型运行编译器和处理器对指令重排序，对单线程无影响，但会影响多线程并发执行的正确性
+        - **happens-before原则**：保证有序性的规则，但是多线程并发会破坏部分规则，要采取一些措施符合这些规则来保证有序性
+            - **程序顺序规则**：一个线程前面的代码先行发生于后面的代码
+            - **锁规则**：一个锁释放先行发生于随后的加锁
+            - **volatile规则**：一个volatile域的写先行发生于后续这个volatitle的读
+            - **传递规则**：操作A先行发生于操作B,操作B先行发生于C，则操作A先行发生与操作C
+- **各种锁**
+    通过锁的同步机制实现线程安全，加了锁的操作能满足原子性
+    - **内置锁synchronized**
+        - 调用synchronized块和方法的对象作为内置锁
+        - 静态的synchronized方法以Class对象作为锁
+        - 获得锁和释放锁是隐式的，可重入，互斥锁
+    - **可重入锁ReentrantLock**
+        - 比内置锁更加灵活，可以设置和获取锁的信息，可设置获取锁的等待时间来避免死锁
+        - 可以设置是否为公平锁和非公平锁，默认非公平锁；可重入，互斥锁
+    - **读写锁ReadWriteLock**
+        - ReentrantReadWriteLock是具体实现类，同时具有ReentantLock的功能
+        - 维护一对关联的锁，读锁是共享锁（S锁），写锁是独占锁/互斥锁（X锁
+    - **公平锁和非公平锁**
+        - 公平锁是当线程取不到锁时会按先后顺序进入AQS中阻塞，当锁释放锁时，按队列的顺序取锁
+        - 非公平锁是有一个后来的线程刚好赶上释放锁的时机取得了锁，这对AQS里的线程是不公平的
+    - **自旋锁**
+        - 当前线程不停地执行循环体，不进行线程状态的改变，所以响应速度很快
+        - 但当线程数不停增加时，性能下降明显，因为每个线程都需要执行，占用CPU时间。如果线程竞争不激烈，并且保持锁的时间段。适合使用自旋锁
+    - **乐观锁和悲观锁**
+        - **乐观锁**总是认为资源是不存在竞争，所以没有加锁，不会有阻塞和死锁，通过CAS算法实现
+            - CAS有3个操作数，内存值V，旧的预期值A, 要修改的新值B，预期值存于线程本地内存，是从主内存拷贝的，  
+            内存值在并发状态下可能被修改，内存值用了volatile保证是内存中最新的值，所以一个线程要修改共享变量  
+            时总是会先检查A值是否与V值，如果不相线程就循环重新获取预期值再与内存值比较，直到操作成功，这种自  
+            旋的方式速度快，但占用CPU。通过加版本号标志解决ABA问题
+            - atomic包中的类大量采用了CAS算法实现变量和对象的原子性的操作
+        - **悲观锁** 总是认为资源存在竞争，synchronized和ReetrankLock就是悲观锁
+- **ThreadLocal**
+    - ThreadLocal为线程提供独立的局部变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本
+    - ThreadLocal在类中通常定义为静态变量, 当线程为ThreadLocal实例set一个value时，发生了如下调用:当前线程  
+    会把ThreadLocal实例和value存到它的ThreadLocal.ThreadLocalMap对象中，该对象由ThreadLocal实例创建并赋给  
+    当前线程，实际上ThreadLocalMap是Entry&lt;ThreadLocal&lt;?&gt;, Object&gt;数组组成的结构  
+    - Entry.key是ThreadLocal变量的弱引用，当ThreadLocal变量=null时，ThreadLocal对象就被回收了，  
+    避免了内存泄露，对应的value在下一次ThreadLocalMap调用set,get,remove的时候会被清除
+</code></pre><ul>
 <li><strong>Java线程状态</strong><ul>
 <li><strong>新建</strong></li>
 <li><strong>可运行</strong><ul>
@@ -761,7 +768,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

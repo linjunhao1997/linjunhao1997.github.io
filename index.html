@@ -242,6 +242,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/数据结构与算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林俊浩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="驿站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/21/数据结构与算法/" itemprop="url">数据结构与算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-21T16:37:05+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/21/数据结构与算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/21/数据结构与算法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>线性表是最基本，最简单的数据结构。有2种存储结构，<strong>顺序存储</strong>和<strong>链式存储</strong>。数组就是一种线性表，数组的特点是静态分配存储单元，在内存是连续存储的，随机存取数据简单，索引O(1),最后位置插入删除O(1),其他位置插入删除要移动数据元素O(n)。<strong>链式存储</strong>是由<strong>数据域</strong>和<strong>指针域</strong>构成的结点组成，分为<strong>单向链表</strong>和<strong>双向链表</strong>，索引O(n);单向链表的get,set,insert,remove等操作要从<strong>头结点</strong>开始遍历操作结点的前驱对其指针域进行操作O(n),双向链表的结点保存着前驱结点的指针和后继结点的指针，不用从头结点开始遍历，插入删除O(1)</p>
+<hr>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是一种运算受限的线性表，只能在栈顶进行插入删除等操作O(1)。特点是<strong>后进先出</strong>，有<strong>顺序栈</strong>和<strong>链式栈</strong>。栈常<strong>应用</strong>在深度遍历算法，非递归方式实现递归算法，后缀表达式的计算等</p>
+<hr>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是另一种运算受限的线性表，队头下标是<strong>front</strong>，队尾下标是<strong>rear</strong>，它只能在front进行删除操作（出队），在rear进行插入操作（入队），特点是<strong>先进先出FIFO</strong>。有<strong>顺序队列</strong>和<strong>循环队列</strong>，当由数组实现顺序队列时，入队时rear++，出队时front++，当入队元素个数超过数组容量时下标越界，但是数组前面部分在出队后是空的，这种情况称为<strong>假溢出</strong>；循环队列逻辑上首尾是相连的，目的是为了节省空间，判断<strong>队列为空的条件是front==rear</strong>，<strong>队列满条件是front=(front+1)%length</strong>,+1是为了给队列留一个空位，如果不留的话队列满与队列为空条件是相同的，不能够判断。主要应用在<strong>先来先服务</strong>问题中，广度遍历算法</p>
+<hr>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>二叉树是应用最多的一种数据结构，是由n&gt;=0个结点构成的，结点由<strong>left指针，数据域，right指针</strong>构成，顺序存储结构比较适合完全二叉树，一般的二叉树会造成空间浪费，链式存储最适合实现二叉树  </p>
+<ul>
+<li><strong>性质</strong><ul>
+<li>第i层(i&gt;=1)最大结点数是2<sup>i-1</sup></li>
+<li>深度为k(k&gt;=1)，最大结点总数是2<sup>k</sup>-1</li>
+<li>叶结点个数=度为2的结点个数+1，即n<sub>0</sub>=n<sub>2</sub>+1</li>
+<li>最大深度为[long<sub>2</sub>n]+1</li>
+</ul>
+</li>
+<li><strong>遍历</strong><ul>
+<li>先序，中序，后序均可以用递归实现或者堆栈实现递归的效果</li>
+<li>层次可用队列实现。从根节点开始入队，循环“结点出队，访问结点，其左右儿子结点入队”</li>
+</ul>
+</li>
+</ul>
+<h3 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h3><p>从上到下左到右排序的编号与<strong>满二叉树</strong>中的编号一一对应,非根结点（序号i&gt;1）的父结点序号是i/2,结点i的左孩子结点是2i(2i&lt;=n，否则无左孩子)，右孩子结点是2i+1(2i+1&lt;=n，否则无右孩子)</p>
+<h3 id="二叉查找树-搜索树-排序树"><a href="#二叉查找树-搜索树-排序树" class="headerlink" title="二叉查找树/搜索树/排序树"></a>二叉查找树/搜索树/排序树</h3><p>当不为空树时，左子树的所有结点值小于它根结点的值，右子树的所有结点值大于它的根结点的值，并且左右子树都是二叉排序树，所以最小值在树的最左端，最大值在树的最右端</p>
+<ul>
+<li><strong>查找</strong><ul>
+<li>若x小于根结点值，在左子树继续查找；若x大于根结点的值，在右子树继续查找；若x等于结点的值则查找完成并返回该结点的值</li>
+<li>查找的最坏情况是单支树，像单链表一样，按顺序查找（n+1）/2，即O(n)；最好情况是完全二叉树或满二叉树O(log<sub>2</sub>n)</li>
+</ul>
+</li>
+</ul>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p>不为空树时，左右子树的高度差绝对值不超过1，在二叉搜索树中，如果删除一个有左右子结点的结点，需要此结点的后继来代替删除的结点，多次操作后，这课树会向左偏沉，时间复杂度会趋向于O(n),这时平衡二叉搜索树就该登场了，常用的实现有<strong>红黑树</strong>，<strong>AVL</strong>,<strong>Treap</strong>等等，查找，插入，删除的时间复杂度都是O(log<sub>2</sub>n)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/数据库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,15 +484,18 @@
         
           
             <h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p><strong>1NF</strong>字段不可再分；<strong>2NF</strong>满足1NF情况下非主属性完全依赖于主属性,消除部分依赖，也就是说如果有两个主属性，那么非主属性不能只依赖于其中一个主属性；<strong>3NF</strong>满足2NF情况下消除传递依赖,也就是说在一张表中通过主属性A能得到B或者C，但是C也能从B得到，这时候要拆分表消除传递依赖。不管如何，现实情况下如果满足严格的范式，虽然能减少数据冗余，但是实体之间的关系会变得非常复杂</p>
+<hr>
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>事务有点像若干个有序的小任务组成的大任务。有ACID四大特性。要么全完成，要么全不完成（<strong>原子性</strong>）；事务完成后，数据库的数据符合预期保持正确完整（<strong>一致性</strong>）；并发的事务交叉读写数据导致数据不一致，所以要采取隔离手段防止这种现象（<strong>隔离性</strong>）；事务完成后，所有的变化都会持久化到数据库，也就是写到硬盘上（<strong>持久性</strong>）。</p>
-<h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><p>在实际开发中，由于数据库服务器是处于高并发环境下的，所以要选择合适的隔离级别保护数据的一致性，同时提高服务器的性能。<br><img src="/images/隔离级别.jpg" style="width:400px !important; height:250px !important"><br><strong>赃读</strong>指在一个事务中读取到其他事务未提交的数据；<strong>不可重复度</strong>指在一个事务中多次查询的数据不同（被其他事务update）;<strong>幻读</strong>指在一个事务中多次查询的结果集多了或者少了（被其他事务delete,insert）。在MySQL的InnoDB引擎在RR级别使用了MVCC（多版本并发控制）避免幻读，将行锁与行的多个版本结合起来，用更小的开销提高并发性能。<strong>序列化</strong>用的是独占锁，性能极差。</p>
+<h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><p>在实际开发中，由于数据库服务器是处于高并发环境下的，所以要选择合适的隔离级别保护数据的一致性，同时提高服务器的性能。</p>
+<p><img src="/images/隔离级别.jpg" style="width:400px !important; height:250px !important"></p>
+<p><strong>赃读</strong>指在一个事务中读取到其他事务未提交的数据；<strong>不可重复度</strong>指在一个事务中多次查询的数据不同（被其他事务update）;<strong>幻读</strong>指在一个事务中多次查询的结果集多了或者少了（被其他事务delete,insert）。在MySQL的InnoDB引擎在RR级别使用了MVCC（多版本并发控制）避免幻读，将行锁与行的多个版本结合起来，用更小的开销提高并发性能。<strong>序列化</strong>用的是独占锁，性能极差。</p>
 <h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><p>存储过程是完成特定功能的SQL语句集，能在存储过程中调用其他存储过程，但不能drop其他存储过程。其入参不能于数据表字段名相同，例如在删除记录时，指定的入参实际会变成每条记录的字段值，导致把表的数据全部删除。</p>
 <h3 id="与函数的区别"><a href="#与函数的区别" class="headerlink" title="与函数的区别"></a>与函数的区别</h3><p>存储过程一般作为独立的部分执行，而函数可以嵌入select语句调用</p>
 <h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>触发器是特殊的存储过程，只是在insert,update,delete发生时才执行，是隐式调用的。相同的表，相同的事件只能创建一个触发器，当触发器不用时要及时删除</p>
 <h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>视图依据基本表存在，是预编译的SQL语句，不占物理空间，可理解为虚拟表。与临时表不同，临时表会占用物理空间，暂时还没用在实际项目中。</p>
 <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是以数据结构组织的，存储了记录的指针。不同的索引，数据结构有所不同，数据的读写效率也不一样。<strong>聚集索引</strong>表中数据的逻辑顺序与键值顺序相同，有主键索引，其数据结构是B树，一种平衡树，有利于查找。<strong>非聚集索引</strong>有唯一索引和普通索引，普通索引有单列索引和多列索引，多列索引要注意<strong>最左前缀</strong>的问题。索引长度越长区分度越高内存消耗越大效率越高。</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li>char类型的值存储时会填充空格到指定长度，检索时删除空格，速度快但是浪费空间，适合在InnoDB和MyISAM用  </li>
+<li>char类型的值存储时会填充空格到指定长度，检索时删除空格，速度快但是浪费空间，适合在InnoDB和MyISAM用</li>
 <li>datatime的范围是1000-9999；timestamp的范围是1970-2038而且会把时区转化为UTC（世界标准时间）进行存储，查询时又转化成当前时区返回，因此timestamp适用于跨时区的需求  </li>
 <li>blob类型用于存储二进制形式的文本  </li>
 </ul>
@@ -528,9 +691,11 @@
 <li>里氏替换原则：任何时候子类都可以替换掉父类</li>
 <li>接口隔离原则：接口单一职责，细粒化</li>
 <li>组合原则：优先使用组合复用代码</li>
-<li>迪米特法则：一个对象对其他对象尽可能少的了解<h2 id="关键字和基本概念"><a href="#关键字和基本概念" class="headerlink" title="关键字和基本概念"></a>关键字和基本概念</h2></li>
+<li>迪米特法则：一个对象对其他对象尽可能少的了解</li>
 </ul>
 </li>
+</ul>
+<h2 id="关键字和基本概念"><a href="#关键字和基本概念" class="headerlink" title="关键字和基本概念"></a>关键字和基本概念</h2><ul>
 <li><strong>语法</strong><ul>
 <li>continue跳出本次循环继续下次循环</li>
 <li>break跳出当前循环，可跳出多重循环,跳出switch否则执行后面的case语句</li>
@@ -539,7 +704,7 @@
 </li>
 <li><strong>内部类</strong>：内部类相当于外部类的一个成员变量，可以直接访问外部变量；但是外部类不能直接访问内部类变量，必须通过创建内部类实例建立联系后再访问（内外之间的访问是不关乎权限的）  <ul>
 <li><strong>静态内部类</strong>：只能访问外部类的静态成员和静态方法，不依赖外部类实例而实例化</li>
-<li><strong>普通内部类</strong>：能访问外部类的成员和方法，无论是否静态，但是本身不能有静态成员和静态方法，<br>  依赖外部类实例而实例化</li>
+<li><strong>普通内部类</strong>：能访问外部类的成员和方法，无论是否静态，但是本身不能有静态成员和静态方法，依赖外部类实例而实例化</li>
 </ul>
 </li>
 <li><strong>构造函数</strong><ul>
@@ -568,35 +733,43 @@
 <li><strong>类加载顺序</strong><ul>
 <li>static变量和static块的初始化顺序与代码顺序有关，哪个在前哪个先初始化</li>
 <li>反编译发现构造代码块是在调用构造函数时插入到构造函数里的，位于super后(如果有)，所以是成员变量 &gt; 构造代码块 &gt; 构造函数</li>
-<li>总的顺序是：父类static &gt; 子类static &gt; 父类成员 &gt; 父类构造块 &gt; 父类构造函数 &gt; 子类成员 &gt; 子类构造块 &gt; 子类构造函数<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>总的顺序是：父类static &gt; 子类static &gt; 父类成员 &gt; 父类构造块 &gt; 父类构造函数 &gt; 子类成员 &gt; 子类构造块 &gt; 子类构造函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li>Java小数默认为double</li>
 <li>整型根据前缀表示不同进制，16进制(0x或0X)，8进制(0),Java7开始可以写2进制(0b或0B)</li>
 <li>低精度到高精度：byte&lt;short&lt;char&lt;int&lt;long&lt;float&lt;double,向下转型要强制转换，精度会损失，”+=”赋值隐含强制转换</li>
-<li>char不管英文还是中文，固定占用占用2个字节，用来储存Unicode字符，所以也包括了中文；<br>C/C++中由于采用的字符编码集是ASCII，只有一个字节，因此没办法表示一个中文字符</li>
+<li>char不管英文还是中文，固定占用占用2个字节，用来储存Unicode字符，所以也包括了中文；C/C++中由于采用的字符编码集是ASCII，只有一个字节，因此没办法表示一个中文字符</li>
 <li>不同数据类型运算时会自动向上(高精度)转型，final修饰除外</li>
 <li>boolean不可以和其他基本数据类型相互转换</li>
-<li>如果两个操作数其中有一个是double类型，另一个操作就会转换为double类型。否则，<br>如果其中一个操作数是float类型，另一个将会转换为float类型。否则，<br>如果其中一个操作数是long类型，另一个会转换为long类型。否则，<br>两个操作数都转换为int类型(byte，short，char进行计算时都会提升为int类型)<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2></li>
+<li>如果两个操作数其中有一个是double类型，另一个操作就会转换为double类型。否则，如果其中一个操作数是float类型，另一个将会转换为float类型。否则，如果其中一个操作数是long类型，另一个会转换为long类型。否则，两个操作数都转换为int类型(byte，short，char进行计算时都会提升为int类型)</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
 <li>&amp;有两种用法：按位与和逻辑与。无论左边运算true或false，右边也会运算，|同理</li>
 <li>&amp;&amp;是短路与，左边运算结果位true,右边才会运算，||同理</li>
-<li><strong>移位运算符</strong> ：按二进制形式把所有的数字移动位数，计算机使用补码表示和存储</li>
-</ul>
-</li>
+<li><strong>移位运算符</strong> ：按二进制形式把所有的数字移动位数，计算机使用补码表示和存储<ul>
 <li><strong>&lt;&lt;</strong> : 左移，高位舍弃，低位空位补0</li>
 <li><strong>&gt;&gt;</strong> : 右移，低位舍弃，高位空位补符号位（正数补0，负数补1）</li>
-<li><strong>&gt;&gt;&gt;</strong> : 无符号右移，忽略符号位，空位补0<h2 id="常见包、类、接口"><a href="#常见包、类、接口" class="headerlink" title="常见包、类、接口"></a>常见包、类、接口</h2><ul>
+<li><strong>&gt;&gt;&gt;</strong> : 无符号右移，忽略符号位，空位补0</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见包、类、接口"><a href="#常见包、类、接口" class="headerlink" title="常见包、类、接口"></a>常见包、类、接口</h2><ul>
 <li><strong>包</strong>：java.lang, java.io, java.util, java.net, java.sql</li>
 <li><strong>类</strong>：String, Thread, ArrayList, InputStream/OutputStream, Math</li>
-<li><strong>接口</strong>：List, Map, Iterator, Runnable, Serializable<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2></li>
+<li><strong>接口</strong>：List, Map, Iterator, Runnable, Serializable</li>
 </ul>
-</li>
-</ul>
-</li>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><ul>
 <li><strong>层次</strong>：Error和Exception继承Throwable，RuntimeException继承Exception</li>
 <li><strong>类型</strong>：RuntimeException及其子类是非受检异常；除此之外Exception是受检异常</li>
 <li><strong>处理</strong>：Error捕获不到，RuntimeException不要求捕获，Exception要求抛出或捕获</li>
 <li><strong>常见的RuntimeException</strong>：NullPointerException, ClassCastException, IllegalArgumentExeption, IndexOutOfBoundsException</li>
 <li><strong>异常语句</strong>：finally中的return语句会覆盖前面的return语句； 如果一个方法出现异常那么只运行catch和finally中的代码，其他代码忽略</li>
-<li><strong>throw和throws</strong>：throw用于抛出异常，throws用于在方法中声明会出现的异常<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2></li>
+<li><strong>throw和throws</strong>：throw用于抛出异常，throws用于在方法中声明会出现的异常</li>
+</ul>
+<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><ul>
 <li><strong>List</strong><ul>
 <li><strong>ArrayList</strong><ul>
 <li>默认容量为10，默认增长0.5倍+1</li>
@@ -620,7 +793,7 @@
 </li>
 <li><strong>Map</strong><ul>
 <li><strong>HashMap</strong><ul>
-<li>JDK7：数组 + 链表实现，数组元素比作一个bucket, 每个bucket由一个Entry&lt;K,V&gt;链表组成，<br>如果K的hashcode冲突会放在相同的bucket， hash冲突严重时，链表会越来越长，时间复杂度为O(n),<br>当超过设置的装填因子会重rehash，容量扩容1倍</li>
+<li>JDK7：数组 + 链表实现，数组元素比作一个bucket, 每个bucket由一个Entry&lt;K,V&gt;链表组成，如果K的hashcode冲突会放在相同的bucket， hash冲突严重时，链表会越来越长，时间复杂度为O(n),当超过设置的装填因子会重rehash，容量扩容1倍</li>
 <li>JDK8：超过装填因子时，链表转换成红黑树的结构</li>
 <li>不允许键重复，对应的类要重写hashcode和equals</li>
 <li>装填因子 = 元素个数 / 容量，默认容量16，装填因子大于0.75就扩容1倍</li>
@@ -680,11 +853,16 @@
 </li>
 <li><strong>集合数组转换</strong><ul>
 <li>集合转数组 toArray(T[] a)</li>
-<li>数组转集合 Arrays.asList() 实质上仍是数组，只是通过适配实现转换，不能用操作集合的方法对转换后的集合操作<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2>运行状态下能获取类的信息，能调用任意对象的方法和属性，但破坏了封装程序；更加灵活，但性能低</li>
+<li>数组转集合 Arrays.asList() 实质上仍是数组，只是通过适配实现转换，不能用操作集合的方法对转换后的集合操作</li>
 </ul>
 </li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>运行状态下能获取类的信息，能调用任意对象的方法和属性，但破坏了封装程序；更加灵活，但性能低</p>
+<ul>
 <li><strong>得到Class对象的方式</strong>：object.getClass(), object.class, Class.forName(String classname)</li>
-<li><strong>Class.forName()和ClassLoader.loadClass()</strong><br>Class.forName()内部实际调用的方法是Class.forName(className,true,classloader),true表示加载class文件到JVM并初始化类；ClassLoader.loadClass(className)方法内部实际调用的方法是ClassLoader.loadClass(className,false)，false表示不链接,意味着不会进行类初始化  <h2 id="方法解惑"><a href="#方法解惑" class="headerlink" title="方法解惑"></a>方法解惑</h2></li>
+<li><strong>Class.forName()和ClassLoader.loadClass()</strong><br>Class.forName()内部实际调用的方法是Class.forName(className,true,classloader),true表示加载class文件到JVM并初始化类；ClassLoader.loadClass(className)方法内部实际调用的方法是ClassLoader.loadClass(className,false)，false表示不链接,意味着不会进行类初始化  </li>
+</ul>
+<h2 id="方法解惑"><a href="#方法解惑" class="headerlink" title="方法解惑"></a>方法解惑</h2><ul>
 <li><strong>数组拷贝效率</strong>： System.arraycopy &gt; clone &gt; Arrays.copyOf &gt; for循环拷贝</li>
 <li><strong>hashCode()</strong> ：默认返回对象的内存地址</li>
 <li><strong>equals()</strong> ：在Object中是比较对象内存地址的，相当于”=”,在String中被重写了，比较的是字符串值</li>
@@ -692,84 +870,76 @@
 <li><strong>Math.round()/floor()/ceil()</strong> ：注意float型是转成int型，double型转成long型<ul>
 <li><strong>round</strong> : 加上0.5向下取整</li>
 <li><strong>floor</strong> ：向下取整，取数轴上比参数小的整数</li>
-<li><strong>ceil</strong> : 向上取整，取数轴上比参数大的整数 <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2>线程是运行在一个单一进程上下文中的逻辑流，通俗点讲就是：线程是进程内部的执行序列</li>
-</ul>
-</li>
-<li><strong>并发和并行</strong><br>并发是一个时刻多个任务的运行，宏观并行，微观串行；并行是同个时间上多个任务的运行，通常需要多核CPU才能实现</li>
-<li><strong>线程安全</strong><br>通过分析并发下是否满足三大性质能实现线程安全<ul>
-<li><strong>Java内存模型(JMM)</strong><br>分为主内存和工作内存。主内存存储共享的变量；每个线程都有自己的工作内存，存储线程本地变量和需要共享变量<br>变量的拷贝副本，每次修改拷贝时都会更新主内存的值</li>
-<li><strong>volatile</strong><ul>
-<li>volatile关键字保证变量被修改后，变量的值对其他线程是立即可见的（新的变量值立马写会主内存，保证可见性）  </li>
-<li>对于变量非原子性的操作（例如：变量自增）是不能保证原子性的</li>
-<li>volatile能只能限制变量前后之间代码的重排序，但不能保证volatile之前和之后代码的重排序，能保证一定的有序性</li>
-</ul>
-</li>
-<li><strong>三大性质</strong><ul>
-<li><strong>原子性</strong><ul>
-<li><strong>竞态条件</strong>：多个线程同时竞争/更新共享的资源是会产生竞态条件，通过同步保证原子性</li>
-<li><strong>临界区</strong>：导致竞态条件的代码区</li>
-<li><strong>复合操作</strong>: 一组以原子性的操作确保线程安全，如自增就是非原子性操作，但是用atomic变量自增就可满足原子性操作</li>
-</ul>
-</li>
-<li><strong>可见性</strong><br>执行读操作的线程能立马看到其他线程写入的值</li>
-<li><strong>有序性</strong><br>Java内存模型运行编译器和处理器对指令重排序，对单线程无影响，但会影响多线程并发执行的正确性<ul>
-<li><strong>happens-before原则</strong>：保证有序性的规则，但是多线程并发会破坏部分规则，要采取一些措施符合这些规则来保证有序性<ul>
-<li><strong>程序顺序规则</strong>：一个线程前面的代码先行发生于后面的代码</li>
-<li><strong>锁规则</strong>：一个锁释放先行发生于随后的加锁</li>
-<li><strong>volatile规则</strong>：一个volatile域的写先行发生于后续这个volatitle的读</li>
-<li><strong>传递规则</strong>：操作A先行发生于操作B,操作B先行发生于C，则操作A先行发生与操作C</li>
+<li><strong>ceil</strong> : 向上取整，取数轴上比参数大的整数 </li>
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>线程是运行在一个单一进程上下文中的逻辑流，通俗点讲就是：线程是进程内部的执行序列</p>
+<ul>
+<li><strong>并发和并行</strong></li>
 </ul>
-</li>
-<li><strong>各种锁</strong><br>  通过锁的同步机制实现线程安全，加了锁的操作能满足原子性<ul>
-<li><strong>内置锁synchronized</strong><ul>
-<li>调用synchronized块和方法的对象作为内置锁</li>
-<li>静态的synchronized方法以Class对象作为锁</li>
-<li>获得锁和释放锁是隐式的，可重入，互斥锁</li>
+<p>并发是一个时刻多个任务的运行，宏观并行，微观串行；并行是同个时间上多个任务的运行，通常需要多核CPU才能实现</p>
+<ul>
+<li><strong>线程安全</strong></li>
 </ul>
-</li>
-<li><strong>可重入锁ReentrantLock</strong><ul>
-<li>比内置锁更加灵活，可以设置和获取锁的信息，可设置获取锁的等待时间来避免死锁</li>
-<li>可以设置是否为公平锁和非公平锁，默认非公平锁；可重入，互斥锁</li>
-</ul>
-</li>
-<li><strong>读写锁ReadWriteLock</strong><ul>
-<li>ReentrantReadWriteLock是具体实现类，同时具有ReentantLock的功能</li>
-<li>维护一对关联的锁，读锁是共享锁（S锁），写锁是独占锁/互斥锁（X锁</li>
-</ul>
-</li>
-<li><strong>公平锁和非公平锁</strong><ul>
-<li>公平锁是当线程取不到锁时会按先后顺序进入AQS中阻塞，当锁释放锁时，按队列的顺序取锁</li>
-<li>非公平锁是有一个后来的线程刚好赶上释放锁的时机取得了锁，这对AQS里的线程是不公平的</li>
-</ul>
-</li>
-<li><strong>自旋锁</strong><ul>
-<li>当前线程不停地执行循环体，不进行线程状态的改变，所以响应速度很快</li>
-<li>但当线程数不停增加时，性能下降明显，因为每个线程都需要执行，占用CPU时间。如果线程竞争不激烈，并且保持锁的时间段。适合使用自旋锁</li>
-</ul>
-</li>
-<li><strong>乐观锁和悲观锁</strong><ul>
-<li><strong>乐观锁</strong>总是认为资源是不存在竞争，所以没有加锁，不会有阻塞和死锁，通过CAS算法实现<ul>
-<li>CAS有3个操作数，内存值V，旧的预期值A, 要修改的新值B，预期值存于线程本地内存，是从主内存拷贝的，<br>内存值在并发状态下可能被修改，内存值用了volatile保证是内存中最新的值，所以一个线程要修改共享变量<br>时总是会先检查A值是否与V值，如果不相线程就循环重新获取预期值再与内存值比较，直到操作成功，这种自<br>旋的方式速度快，但占用CPU。通过加版本号标志解决ABA问题</li>
-<li>atomic包中的类大量采用了CAS算法实现变量和对象的原子性的操作</li>
-</ul>
-</li>
-<li><strong>悲观锁</strong> 总是认为资源存在竞争，synchronized和ReetrankLock就是悲观锁</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>ThreadLocal</strong><ul>
-<li>ThreadLocal为线程提供独立的局部变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本</li>
-<li>ThreadLocal在类中通常定义为静态变量, 当线程为ThreadLocal实例set一个value时，发生了如下调用:当前线程<br>会把ThreadLocal实例和value存到它的ThreadLocal.ThreadLocalMap对象中，该对象由ThreadLocal实例创建并赋给<br>当前线程，实际上ThreadLocalMap是Entry&lt;ThreadLocal&lt;?&gt;, Object&gt;数组组成的结构  </li>
-<li>Entry.key是ThreadLocal变量的弱引用，当ThreadLocal变量=null时，ThreadLocal对象就被回收了，<br>避免了内存泄露，对应的value在下一次ThreadLocalMap调用set,get,remove的时候会被清除</li>
-</ul>
-</li>
-</ul>
-</li>
+<p>通过分析并发下是否满足三大性质能实现线程安全</p>
+<pre><code>- **Java内存模型(JMM)**
+
+分为主内存和工作内存。主内存存储共享的变量；每个线程都有自己的工作内存，存储线程本地变量和需要共享变量  
+变量的拷贝副本，每次修改拷贝时都会更新主内存的值
+
+- **volatile**
+    - volatile关键字保证变量被修改后，变量的值对其他线程是立即可见的（新的变量值立马写会主内存，保证可见性）  
+    - 对于变量非原子性的操作（例如：变量自增）是不能保证原子性的
+    - volatile能只能限制变量前后之间代码的重排序，但不能保证volatile之前和之后代码的重排序，能保证一定的有序性
+- **三大性质**
+    - **原子性**
+        - **竞态条件**：多个线程同时竞争/更新共享的资源是会产生竞态条件，通过同步保证原子性
+        - **临界区**：导致竞态条件的代码区
+        - **复合操作**: 一组以原子性的操作确保线程安全，如自增就是非原子性操作，但是用atomic变量自增就可满足原子性操作
+    - **可见性**
+    执行读操作的线程能立马看到其他线程写入的值
+    - **有序性**
+    Java内存模型运行编译器和处理器对指令重排序，对单线程无影响，但会影响多线程并发执行的正确性
+        - **happens-before原则**：保证有序性的规则，但是多线程并发会破坏部分规则，要采取一些措施符合这些规则来保证有序性
+            - **程序顺序规则**：一个线程前面的代码先行发生于后面的代码
+            - **锁规则**：一个锁释放先行发生于随后的加锁
+            - **volatile规则**：一个volatile域的写先行发生于后续这个volatitle的读
+            - **传递规则**：操作A先行发生于操作B,操作B先行发生于C，则操作A先行发生与操作C
+- **各种锁**
+    通过锁的同步机制实现线程安全，加了锁的操作能满足原子性
+    - **内置锁synchronized**
+        - 调用synchronized块和方法的对象作为内置锁
+        - 静态的synchronized方法以Class对象作为锁
+        - 获得锁和释放锁是隐式的，可重入，互斥锁
+    - **可重入锁ReentrantLock**
+        - 比内置锁更加灵活，可以设置和获取锁的信息，可设置获取锁的等待时间来避免死锁
+        - 可以设置是否为公平锁和非公平锁，默认非公平锁；可重入，互斥锁
+    - **读写锁ReadWriteLock**
+        - ReentrantReadWriteLock是具体实现类，同时具有ReentantLock的功能
+        - 维护一对关联的锁，读锁是共享锁（S锁），写锁是独占锁/互斥锁（X锁
+    - **公平锁和非公平锁**
+        - 公平锁是当线程取不到锁时会按先后顺序进入AQS中阻塞，当锁释放锁时，按队列的顺序取锁
+        - 非公平锁是有一个后来的线程刚好赶上释放锁的时机取得了锁，这对AQS里的线程是不公平的
+    - **自旋锁**
+        - 当前线程不停地执行循环体，不进行线程状态的改变，所以响应速度很快
+        - 但当线程数不停增加时，性能下降明显，因为每个线程都需要执行，占用CPU时间。如果线程竞争不激烈，并且保持锁的时间段。适合使用自旋锁
+    - **乐观锁和悲观锁**
+        - **乐观锁**总是认为资源是不存在竞争，所以没有加锁，不会有阻塞和死锁，通过CAS算法实现
+            - CAS有3个操作数，内存值V，旧的预期值A, 要修改的新值B，预期值存于线程本地内存，是从主内存拷贝的，  
+            内存值在并发状态下可能被修改，内存值用了volatile保证是内存中最新的值，所以一个线程要修改共享变量  
+            时总是会先检查A值是否与V值，如果不相线程就循环重新获取预期值再与内存值比较，直到操作成功，这种自  
+            旋的方式速度快，但占用CPU。通过加版本号标志解决ABA问题
+            - atomic包中的类大量采用了CAS算法实现变量和对象的原子性的操作
+        - **悲观锁** 总是认为资源存在竞争，synchronized和ReetrankLock就是悲观锁
+- **ThreadLocal**
+    - ThreadLocal为线程提供独立的局部变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本
+    - ThreadLocal在类中通常定义为静态变量, 当线程为ThreadLocal实例set一个value时，发生了如下调用:当前线程  
+    会把ThreadLocal实例和value存到它的ThreadLocal.ThreadLocalMap对象中，该对象由ThreadLocal实例创建并赋给  
+    当前线程，实际上ThreadLocalMap是Entry&lt;ThreadLocal&lt;?&gt;, Object&gt;数组组成的结构  
+    - Entry.key是ThreadLocal变量的弱引用，当ThreadLocal变量=null时，ThreadLocal对象就被回收了，  
+    避免了内存泄露，对应的value在下一次ThreadLocalMap调用set,get,remove的时候会被清除
+</code></pre><ul>
 <li><strong>Java线程状态</strong><ul>
 <li><strong>新建</strong></li>
 <li><strong>可运行</strong><ul>
@@ -1031,7 +1201,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
