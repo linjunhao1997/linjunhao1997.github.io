@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="面向对象把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态  特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstra">
+<meta name="description" content="面向对象把某件东西抽象成对象，封装对象属性和操作方法。调用的权限由封装的级别决定。 特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstract修饰，接口中的方法的默认public ab">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础">
 <meta property="og:url" content="http://yoursite.com/2018/10/18/Java基础/index.html">
 <meta property="og:site_name" content="驿站">
-<meta property="og:description" content="面向对象把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态  特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstra">
+<meta property="og:description" content="面向对象把某件东西抽象成对象，封装对象属性和操作方法。调用的权限由封装的级别决定。 特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstract修饰，接口中的方法的默认public ab">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-21T17:21:10.254Z">
+<meta property="og:updated_time" content="2018-10-25T05:51:41.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础">
-<meta name="twitter:description" content="面向对象把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态  特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstra">
+<meta name="twitter:description" content="面向对象把某件东西抽象成对象，封装对象属性和操作方法。调用的权限由封装的级别决定。 特性 抽象：忽略细节，更注重通用的方面 抽象类和接口 抽象类可以继承实体类，前提是实体类有继承权限的构造器   抽象类可以声明对象，不能实例化，可以有构造函数   抽象类中可以有静态方法，接口中也可以有   接口可以继承多个接口   接口只能被public、abstract修饰，接口中的方法的默认public ab">
 
 
 
@@ -170,7 +170,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">不积跬步，无以至千里；不积小流，无以成江海</p>
+        <h1 class="site-subtitle" itemprop="description">不积跬步，无以至千里；不积小流，无以成江海</h1>
       
   </div>
 
@@ -196,6 +196,16 @@
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -259,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础</h1>
+          <h2 class="post-title" itemprop="name headline">Java基础</h2>
         
 
         <div class="post-meta">
@@ -281,6 +291,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,19 +351,16 @@
       
 
       
-        <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>把某件东西抽象成对象，定义对象属性，定义方法等，赋予调用属性和方法的权限，其他对象只能在权限下改变获取或改变对象的状态</p>
-<ul>
-<li><strong>特性</strong><ul>
+        <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>把某件东西抽象成对象，封装对象属性和操作方法。调用的权限由封装的级别决定。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
 <li><strong>抽象</strong>：忽略细节，更注重通用的方面<ul>
-<li><strong>抽象类和接口</strong><ul>
+<li><strong>抽象类和接口</strong></li>
 <li>抽象类可以继承实体类，前提是实体类有继承权限的构造器  </li>
 <li>抽象类可以声明对象，不能实例化，可以有构造函数  </li>
 <li>抽象类中可以有静态方法，接口中也可以有  </li>
 <li>接口可以继承多个接口  </li>
 <li>接口只能被public、abstract修饰，接口中的方法的默认public abstract修饰，JDK8以后可以用defualt修饰 </li>
 <li>接口中定义的常量默认为 public static final修饰</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><strong>继承</strong>：子类可以使用父类的成员变量和方法，提高代码复用性<ul>
@@ -342,7 +371,7 @@
 </li>
 </ul>
 </li>
-<li><strong>多态</strong>：同样的方法作用于不同对象会有不同结果<ul>
+<li><strong>多态</strong>：父类可以设置成子类，子类可当父类用<ul>
 <li><strong>方法重载和方法重写</strong><ul>
 <li>重载是一个编译时多态，不同的参数个数、参数类型、参数顺序</li>
 <li>重写是运行时多态，调用的具体方法是动态绑定的</li>
@@ -352,8 +381,6 @@
 </ul>
 </li>
 <li><strong>封装</strong>：对象的属性和实现方法对外隐藏，通过访问修饰符调整封装的级别</li>
-</ul>
-</li>
 <li><strong>6原则1法则</strong><ul>
 <li>单一职责原则：一个类只做它该做的事</li>
 <li>开闭原则：代码易于拓展就是对拓展开发，代码不应该被修改，对修改关闭</li>
@@ -372,7 +399,7 @@
 <li>switch表达式只能是byte, short, char, int和枚举类型，JDK7开始可以是String</li>
 </ul>
 </li>
-<li><strong>内部类</strong>：内部类相当于外部类的一个成员变量，可以直接访问外部变量；但是外部类不能直接访问内部类变量，必须通过创建内部类实例建立联系后再访问（内外之间的访问是不关乎权限的）  <ul>
+<li><strong>内部类</strong><br>内部类相当于外部类的一个成员变量，可以直接访问外部变量；但是外部类不能直接访问内部类变量，必须通过创建内部类实例建立联系后再访问（内外之间的访问是不关乎权限的）  <ul>
 <li><strong>静态内部类</strong>：只能访问外部类的静态成员和静态方法，不依赖外部类实例而实例化</li>
 <li><strong>普通内部类</strong>：能访问外部类的成员和方法，无论是否静态，但是本身不能有静态成员和静态方法，依赖外部类实例而实例化</li>
 </ul>
@@ -380,8 +407,8 @@
 <li><strong>构造函数</strong><ul>
 <li>构造函数不能被继承和重写，可重载</li>
 <li>编译器在运行子类构造函数前必须先执行父类的构造函数</li>
-<li>子类构造函数中的第一行必须调用父类构造函数, 若父类只要无参构造函数，则子类构造函数可以省略这一行</li>
-<li>若父类有有参的构造函数，则必须在这一行通过super显示调用父类的构造函数</li>
+<li>子类构造函数中的第一行必须调用父类构造函数, 若父类只有无参构造函数，则子类构造函数可以省略这一行。因为编译器默认会自动加上super.父类无参构造器</li>
+<li>若父类有有参的构造函数，最好在第一行通过super显式调用父类的构造函数，否则默认调用父类无参的构造器</li>
 </ul>
 </li>
 <li><strong>super</strong><ul>
@@ -391,7 +418,7 @@
 <li><strong>final</strong><ul>
 <li>final变量是无法修改的，无默认值，要先赋值或者在构造方法中初始化,</li>
 <li>final static表示常量，常量必须在定义时赋值</li>
-<li>只有final能修饰形参，表示这个参数不能重新赋值，否则编译错误</li>
+<li>只有final能修饰形参，表示这个参数在方法体中不能重新赋值，否则编译错误</li>
 </ul>
 </li>
 <li><strong>静态方法和静态变量</strong><ul>
@@ -672,10 +699,6 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/17/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
@@ -758,7 +781,7 @@
                 alt="林俊浩" />
             
               <p class="site-author-name" itemprop="name">林俊浩</p>
-              <p class="site-description motion-element" itemprop="description">CS, Java</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -768,12 +791,21 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -805,7 +837,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字和基本概念"><span class="nav-number">2.</span> <span class="nav-text">关键字和基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见包、类、接口"><span class="nav-number">5.</span> <span class="nav-text">常见包、类、接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">6.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合框架"><span class="nav-number">7.</span> <span class="nav-text">集合框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">8.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法解惑"><span class="nav-number">9.</span> <span class="nav-text">方法解惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">10.</span> <span class="nav-text">多线程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">1.1.</span> <span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字和基本概念"><span class="nav-number">2.</span> <span class="nav-text">关键字和基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见包、类、接口"><span class="nav-number">5.</span> <span class="nav-text">常见包、类、接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">6.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合框架"><span class="nav-number">7.</span> <span class="nav-text">集合框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">8.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法解惑"><span class="nav-number">9.</span> <span class="nav-text">方法解惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">10.</span> <span class="nav-text">多线程</span></a></li></ol></div>
             
 
           </div>

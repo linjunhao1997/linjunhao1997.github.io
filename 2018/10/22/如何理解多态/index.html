@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="CS, Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="驿站">
-<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+<meta name="description" content="多态一个基类有多个子类，每个基类都可以设置为子类，即子类可以当成父类，这就是子类向上转型，当我们调用某个对象的方法时，会自动检查该对象的类型，如果对象是基类则调用基类的方法，否则调用具体子类重写的方法，这称为动态绑定，。对于接口也是一样的，面向接口编程，实际就是接口可以设置成多种实现类，接口调用的方法会根据设置的实现类的类型实现他们各自的效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何理解多态">
+<meta property="og:url" content="http://yoursite.com/2018/10/22/如何理解多态/index.html">
 <meta property="og:site_name" content="驿站">
-<meta property="og:description" content="CS, Java">
+<meta property="og:description" content="多态一个基类有多个子类，每个基类都可以设置为子类，即子类可以当成父类，这就是子类向上转型，当我们调用某个对象的方法时，会自动检查该对象的类型，如果对象是基类则调用基类的方法，否则调用具体子类重写的方法，这称为动态绑定，。对于接口也是一样的，面向接口编程，实际就是接口可以设置成多种实现类，接口调用的方法会根据设置的实现类的类型实现他们各自的效果。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-22T14:29:43.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="驿站">
-<meta name="twitter:description" content="CS, Java">
+<meta name="twitter:title" content="如何理解多态">
+<meta name="twitter:description" content="多态一个基类有多个子类，每个基类都可以设置为子类，即子类可以当成父类，这就是子类向上转型，当我们调用某个对象的方法时，会自动检查该对象的类型，如果对象是基类则调用基类的方法，否则调用具体子类重写的方法，这称为动态绑定，。对于接口也是一样的，面向接口编程，实际就是接口可以设置成多种实现类，接口调用的方法会根据设置的实现类的类型实现他们各自的效果。">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/10/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/22/如何理解多态/"/>
 
 
 
 
 
-  <title>归档 | 驿站</title>
+  <title>如何理解多态 | 驿站</title>
   
 
 
@@ -153,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,222 +238,177 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/如何理解多态/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林俊浩">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="驿站">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">如何理解多态</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-22T17:10:25+08:00">
+                2018-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/22/如何理解多态/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/22/如何理解多态/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/23/设计模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式</span>
-              
-            </a>
-        
-      </h3>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-23T18:20:52+08:00"
-              content="2018-10-23" >
-          10-23
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/22/如何理解多态/" itemprop="url">
-              
-                <span itemprop="name">如何理解多态</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-22T17:10:25+08:00"
-              content="2018-10-22" >
-          10-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/21/数据结构与算法/" itemprop="url">
-              
-                <span itemprop="name">数据结构与算法</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-21T16:37:05+08:00"
-              content="2018-10-21" >
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/20/数据库/" itemprop="url">
-              
-                <span itemprop="name">数据库</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-20T22:28:22+08:00"
-              content="2018-10-20" >
-          10-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>一个基类有多个子类，每个基类都可以设置为子类，即子类可以当成父类，这就是子类<strong>向上转型</strong>，当我们调用某个对象的方法时，会自动检查该对象的类型，如果对象是基类则调用基类的方法，否则调用具体子类重写的方法，这称为<strong>动态绑定</strong>，。对于接口也是一样的，面向接口编程，实际就是接口可以设置成多种实现类，接口调用的方法会根据设置的实现类的类型实现他们各自的效果。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/18/Java基础/" itemprop="url">
-              
-                <span itemprop="name">Java基础</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-18T02:38:13+08:00"
-              content="2018-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/21/数据结构与算法/" rel="next" title="数据结构与算法">
+                <i class="fa fa-chevron-left"></i> 数据结构与算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/23/设计模式/" rel="prev" title="设计模式">
+                设计模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -460,6 +416,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -480,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +508,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">1.</span> <span class="nav-text">多态</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -676,6 +664,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
